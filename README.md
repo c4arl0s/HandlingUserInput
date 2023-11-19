@@ -234,10 +234,42 @@ Use the filtered version of the list of landmarks in the List.
 
 Change the initial value of `showFavoritesOnly` to `true` to see how the list reacts.
 
+<img width="1449" alt="Screenshot 2023-11-19 at 12 54 01 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/82c254be-daa5-4aea-8279-d8ac02f9554a">
 
+<img width="1134" alt="Screenshot 2023-11-19 at 12 55 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/6ecadd68-b122-4f02-a11c-066cba0e02c4">
 
+```swift
+import SwiftUI
 
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [Landmark] {
+        landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
+    var body: some View {
+        NavigationView {
+            List(filteredLandmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetailView(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
+        }
+    }
+}
 
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
 
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
