@@ -224,6 +224,21 @@ var filteredLandmarks: [Landmark] {
 }
 ```
 
+<img width="1449" alt="Screenshot 2023-11-19 at 12 43 37 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/0fddf96a-768b-4274-a5a9-0c79c62aad27">
+
+# Step 5
+
+Use the filtered version of the list of landmarks in the List.
+
+# Step 6
+
+Change the initial value of `showFavoritesOnly` to `true` to see how the list reacts.
+
+
+
+
+
+
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
