@@ -161,6 +161,25 @@ Running Landmarks app.
 <img width="511" alt="Screenshot 2023-11-15 at 12 07 49 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/b05f1b7d-9351-4e58-a243-e443a142f6b0">
 
 # 2. [Filter the List View](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+You can customize the list view so that it shows all of the landmarks, or just the user’s favorites. To do this, you’ll need to add a bit of `state` to the `LandmarkList` type.
+
+`State` is a `value`, or a `set of values`, that can change over time, and that affects a view’s behavior, content, or layout. You use a property with the `@State` attribute to add state to a view.
+
+![Image](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a9390a94-036f-4784-bee0-3673ad0b50c0)
+
+# Step 1
+
+Select `LandmarkList.swift` in the Project navigator.
+
+# Step 2
+
+Add a `@State` property called `showFavoritesOnly`, with its initial value set to `false`.
+
+> Because you use state properties to hold information that is specific to a view and its subviews, you always create state as `private`.
+
+
+
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
