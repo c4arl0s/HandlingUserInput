@@ -178,7 +178,51 @@ Add a `@State` property called `showFavoritesOnly`, with its initial value set t
 
 > Because you use state properties to hold information that is specific to a view and its subviews, you always create state as `private`.
 
+```swift
+import SwiftUI
 
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = false
+    var body: some View {
+        NavigationView {
+            List(landmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetailView(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
+# Step 3
+
+When you make changes to your view’s structure, like adding or modifying a property, the canvas automatically refreshes.
+
+> If the canvas isn’t visible, select Editor > Canvas to show it.
+
+# Step 4
+
+Compute a filtered version of the landmarks list by checking the `showFavoritesOnly` property and each `landmark.isFavorite` value.
+
+<img width="468" alt="Screenshot 2023-11-19 at 12 38 50 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/03712438-b9c9-46be-a2f4-3a1fb5aa8c93">
+
+```swift
+var filteredLandmarks: [Landmark] {
+    landmarks.filter { landmark in
+        (!showFavoritesOnly || landmark.isFavorite)
+    }
+}
+```
 
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
