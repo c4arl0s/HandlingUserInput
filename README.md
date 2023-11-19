@@ -161,6 +161,116 @@ Running Landmarks app.
 <img width="511" alt="Screenshot 2023-11-15 at 12 07 49 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/b05f1b7d-9351-4e58-a243-e443a142f6b0">
 
 # 2. [Filter the List View](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+You can customize the list view so that it shows all of the landmarks, or just the user’s favorites. To do this, you’ll need to add a bit of `state` to the `LandmarkList` type.
+
+`State` is a `value`, or a `set of values`, that can change over time, and that affects a view’s behavior, content, or layout. You use a property with the `@State` attribute to add state to a view.
+
+![Image](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a9390a94-036f-4784-bee0-3673ad0b50c0)
+
+# Step 1
+
+Select `LandmarkList.swift` in the Project navigator.
+
+# Step 2
+
+Add a `@State` property called `showFavoritesOnly`, with its initial value set to `false`.
+
+> Because you use state properties to hold information that is specific to a view and its subviews, you always create state as `private`.
+
+```swift
+import SwiftUI
+
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = false
+    var body: some View {
+        NavigationView {
+            List(landmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetailView(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
+# Step 3
+
+When you make changes to your view’s structure, like adding or modifying a property, the canvas automatically refreshes.
+
+> If the canvas isn’t visible, select Editor > Canvas to show it.
+
+# Step 4
+
+Compute a filtered version of the landmarks list by checking the `showFavoritesOnly` property and each `landmark.isFavorite` value.
+
+<img width="468" alt="Screenshot 2023-11-19 at 12 38 50 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/03712438-b9c9-46be-a2f4-3a1fb5aa8c93">
+
+```swift
+var filteredLandmarks: [Landmark] {
+    landmarks.filter { landmark in
+        (!showFavoritesOnly || landmark.isFavorite)
+    }
+}
+```
+
+<img width="1449" alt="Screenshot 2023-11-19 at 12 43 37 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/0fddf96a-768b-4274-a5a9-0c79c62aad27">
+
+# Step 5
+
+Use the filtered version of the list of landmarks in the List.
+
+# Step 6
+
+Change the initial value of `showFavoritesOnly` to `true` to see how the list reacts.
+
+<img width="1449" alt="Screenshot 2023-11-19 at 12 54 01 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/82c254be-daa5-4aea-8279-d8ac02f9554a">
+
+<img width="1134" alt="Screenshot 2023-11-19 at 12 55 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/6ecadd68-b122-4f02-a11c-066cba0e02c4">
+
+```swift
+import SwiftUI
+
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [Landmark] {
+        landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
+    var body: some View {
+        NavigationView {
+            List(filteredLandmarks) { landmark in
+                NavigationLink {
+                    LandmarkDetailView(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationTitle("Landmarks")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
