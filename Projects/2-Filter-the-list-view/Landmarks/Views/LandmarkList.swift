@@ -17,7 +17,7 @@ struct LandmarkList: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
             List(filteredLandmarks) { landmark in
                 NavigationLink {
                     LandmarkDetailView(landmark: landmark)
@@ -26,6 +26,8 @@ struct LandmarkList: View {
                 }
             }
             .navigationTitle("Landmarks")
+        } detail: {
+            Text("Select a Landmark")
         }
     }
 }
