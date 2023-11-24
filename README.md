@@ -286,6 +286,44 @@ Create a nested `ForEach` group to transform the landmarks into rows.
 
 To combine static and dynamic views in a list, or to combine two or more different groups of dynamic views, use the `ForEach` type instead of passing your collection of data to List.
 
+```swift
+import SwiftUI
+
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [Landmark] {
+        landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
+    var body: some View {
+        NavigationSplitView {
+            List {
+                ForEach(filteredLandmarks) { landmark in
+                    NavigationLink {
+                        LandmarkDetailView(landmark: landmark)
+                    } label: {
+                        LandmarkRow(landmark: landmark)
+                    }
+                }
+                .navigationTitle("Landmarks")
+            }
+        } detail: {
+            Text("Select a Landmark")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
+<img width="1080" alt="Screenshot 2023-11-23 at 10 12 42 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/c0b3cc27-26b9-4c51-a0f8-a95ef405e83d">
 
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
