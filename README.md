@@ -280,6 +280,13 @@ To give the user control over the list’s filter, you need to add a control tha
 
 <img width="346" alt="Screenshot 2023-11-21 at 10 56 16 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/409d7d69-c51c-45af-ad9e-8e7c6480a34c">
 
+# Step 1
+
+Create a nested `ForEach` group to transform the landmarks into rows.
+
+To combine static and dynamic views in a list, or to combine two or more different groups of dynamic views, use the `ForEach` type instead of passing your collection of data to List.
+
+
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
