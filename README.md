@@ -323,7 +323,15 @@ struct LandmarkList_Previews: PreviewProvider {
 }
 ```
 
+<img width="1451" alt="Screenshot 2023-11-23 at 10 16 53 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/3eaf0e7c-2e1f-45dc-804d-6ab78762e1c3">
+
 <img width="1080" alt="Screenshot 2023-11-23 at 10 12 42 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/c0b3cc27-26b9-4c51-a0f8-a95ef405e83d">
+
+# Step 2
+
+Add a `Toggle` view as the first child of the `List` view, passing a binding to `showFavoritesOnly`.
+
+You use the `$` prefix to access a binding to a state variable, or one of its properties.
 
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
