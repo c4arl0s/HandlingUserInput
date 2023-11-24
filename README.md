@@ -333,6 +333,65 @@ Add a `Toggle` view as the first child of the `List` view, passing a binding to 
 
 You use the `$` prefix to access a binding to a state variable, or one of its properties.
 
+<img width="1452" alt="Screenshot 2023-11-23 at 10 30 32 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/ef05f203-f8a9-4f59-b33b-c916efbd64f6">
+
+```swift
+import SwiftUI
+
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [Landmark] {
+        landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
+    var body: some View {
+        NavigationSplitView {
+            List {
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(filteredLandmarks) { landmark in
+                    NavigationLink {
+                        LandmarkDetailView(landmark: landmark)
+                    } label: {
+                        LandmarkRow(landmark: landmark)
+                    }
+                }
+                .navigationTitle("Landmarks")
+            }
+        } detail: {
+            Text("Select a Landmark")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
+<img width="1086" alt="Screenshot 2023-11-23 at 10 32 11 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/642d3b90-18ac-4eb7-a2fb-4515a3c66087">
+
+# Step 3
+
+Before moving on, return the default value of `showsFavoritesOnly` to `false`.
+
+```swift
+@State private var showFavoritesOnly = false
+```
+
+<img width="365" alt="Screenshot 2023-11-23 at 10 35 28 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/28408482-10fa-4f91-beab-e68b7298b5b5">
+
+# Step 4
+
+Use the Live preview and try out this new functionality by tapping the toggle.
+
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
