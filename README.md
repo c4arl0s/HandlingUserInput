@@ -3,8 +3,8 @@
 # [HandlingUserInput - Content](https://github.com/c4arl0s/handlinguserinput#go-back-to-overview)
 
 1. [x] [1. Mark the User’s Favorite Landmarks](https://github.com/c4arl0s/handlinguserinput#1-Mark-the-Users-Favorite-Landmarks)
-2. [ ] [2. Filter the List View](https://github.com/c4arl0s/handlinguserinput#2-Filter-the-List-View)
-3. [ ] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
+2. [x] [2. Filter the List View](https://github.com/c4arl0s/handlinguserinput#2-Filter-the-List-View)
+3. [x] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
 4. [ ] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
 5. [ ] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
 6. [ ] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
@@ -273,6 +273,125 @@ struct LandmarkList_Previews: PreviewProvider {
 ```
 
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+To give the user control over the list’s filter, you need to add a control that can alter the value of showFavoritesOnly. You do this by **passing a binding to a toggle control**.
+
+**A binding acts as a reference to a mutable state**. When a user taps the toggle from off to on, and off again, the control uses the binding to update the view’s state accordingly.
+
+<img width="346" alt="Screenshot 2023-11-21 at 10 56 16 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/409d7d69-c51c-45af-ad9e-8e7c6480a34c">
+
+# Step 1
+
+Create a nested `ForEach` group to transform the landmarks into rows.
+
+To combine static and dynamic views in a list, or to combine two or more different groups of dynamic views, use the `ForEach` type instead of passing your collection of data to List.
+
+```swift
+import SwiftUI
+
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [Landmark] {
+        landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
+    var body: some View {
+        NavigationSplitView {
+            List {
+                ForEach(filteredLandmarks) { landmark in
+                    NavigationLink {
+                        LandmarkDetailView(landmark: landmark)
+                    } label: {
+                        LandmarkRow(landmark: landmark)
+                    }
+                }
+                .navigationTitle("Landmarks")
+            }
+        } detail: {
+            Text("Select a Landmark")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
+<img width="1451" alt="Screenshot 2023-11-23 at 10 16 53 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/3eaf0e7c-2e1f-45dc-804d-6ab78762e1c3">
+
+<img width="1080" alt="Screenshot 2023-11-23 at 10 12 42 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/c0b3cc27-26b9-4c51-a0f8-a95ef405e83d">
+
+# Step 2
+
+Add a `Toggle` view as the first child of the `List` view, passing a binding to `showFavoritesOnly`.
+
+You use the `$` prefix to access a binding to a state variable, or one of its properties.
+
+<img width="1452" alt="Screenshot 2023-11-23 at 10 30 32 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/ef05f203-f8a9-4f59-b33b-c916efbd64f6">
+
+```swift
+import SwiftUI
+
+struct LandmarkList: View {
+    @State private var showFavoritesOnly = true
+    
+    var filteredLandmarks: [Landmark] {
+        landmarks.filter { landmark in
+            (!showFavoritesOnly || landmark.isFavorite)
+        }
+    }
+    
+    var body: some View {
+        NavigationSplitView {
+            List {
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(filteredLandmarks) { landmark in
+                    NavigationLink {
+                        LandmarkDetailView(landmark: landmark)
+                    } label: {
+                        LandmarkRow(landmark: landmark)
+                    }
+                }
+                .navigationTitle("Landmarks")
+            }
+        } detail: {
+            Text("Select a Landmark")
+        }
+    }
+}
+
+struct LandmarkList_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkList()
+    }
+}
+```
+
+<img width="1086" alt="Screenshot 2023-11-23 at 10 32 11 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/642d3b90-18ac-4eb7-a2fb-4515a3c66087">
+
+# Step 3
+
+Before moving on, return the default value of `showsFavoritesOnly` to `false`.
+
+```swift
+@State private var showFavoritesOnly = false
+```
+
+<img width="365" alt="Screenshot 2023-11-23 at 10 35 28 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/28408482-10fa-4f91-beab-e68b7298b5b5">
+
+# Step 4
+
+Use the Live preview and try out this new functionality by tapping the toggle.
+
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
