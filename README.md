@@ -107,7 +107,7 @@ struct LandmarkRow_Previews: PreviewProvider {
 }
 ```
 
-<img width="1074" alt="Screenshot 2023-11-14 at 11 59 53 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/09614565-5652-40d3-ae67-4d9d0141b408">
+<img width="1074" alt="Screenshot 2023-11-14 at 11 59 53 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/8731b03b-ce22-4ef8-bc75-5f3afc508a27">
 
 # Step 5
 
@@ -154,11 +154,11 @@ struct LandmarkRow_Previews: PreviewProvider {
 }
 ```
 
-<img width="1105" alt="Screenshot 2023-11-15 at 12 05 05 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/7cf6330d-fa71-431d-bec5-92f17847a816">
+<img width="1105" alt="Screenshot 2023-11-15 at 12 05 05 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/67df75c6-2d74-4a5e-823f-4dfd7d354fed">
 
 Running Landmarks app.
 
-<img width="511" alt="Screenshot 2023-11-15 at 12 07 49 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/b05f1b7d-9351-4e58-a243-e443a142f6b0">
+<img width="511" alt="Screenshot 2023-11-15 at 12 07 49 a m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/f7c6ff26-9519-402d-ba7d-eb2424fe4e80">
 
 # 2. [Filter the List View](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 
@@ -166,7 +166,7 @@ You can customize the list view so that it shows all of the landmarks, or just t
 
 `State` is a `value`, or a `set of values`, that can change over time, and that affects a view’s behavior, content, or layout. You use a property with the `@State` attribute to add state to a view.
 
-![Image](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a9390a94-036f-4784-bee0-3673ad0b50c0)
+<img width="378" alt="Screenshot 2023-11-23 at 9 16 10 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/d30ee121-de07-4ac1-8f3b-5d7d117ce3a7">
 
 # Step 1
 
@@ -214,7 +214,7 @@ When you make changes to your view’s structure, like adding or modifying a pro
 
 Compute a filtered version of the landmarks list by checking the `showFavoritesOnly` property and each `landmark.isFavorite` value.
 
-<img width="468" alt="Screenshot 2023-11-19 at 12 38 50 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/03712438-b9c9-46be-a2f4-3a1fb5aa8c93">
+<img width="468" alt="Screenshot 2023-11-19 at 12 38 50 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/7db0657f-4a14-488f-97d4-f6f2227cffdf">
 
 ```swift
 var filteredLandmarks: [Landmark] {
@@ -224,7 +224,7 @@ var filteredLandmarks: [Landmark] {
 }
 ```
 
-<img width="1449" alt="Screenshot 2023-11-19 at 12 43 37 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/0fddf96a-768b-4274-a5a9-0c79c62aad27">
+<img width="1449" alt="Screenshot 2023-11-19 at 12 43 37 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/7ab960f0-4f86-4342-a9da-7a24e009c583">
 
 # Step 5
 
@@ -234,9 +234,10 @@ Use the filtered version of the list of landmarks in the List.
 
 Change the initial value of `showFavoritesOnly` to `true` to see how the list reacts.
 
-<img width="1449" alt="Screenshot 2023-11-19 at 12 54 01 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/82c254be-daa5-4aea-8279-d8ac02f9554a">
+<img width="1449" alt="Screenshot 2023-11-19 at 12 54 01 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/b83faf9f-59af-46a3-b9a2-c73cfdd44719">
 
-<img width="1134" alt="Screenshot 2023-11-19 at 12 55 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/6ecadd68-b122-4f02-a11c-066cba0e02c4">
+
+<img width="1134" alt="Screenshot 2023-11-19 at 12 55 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/2c4b4cad-781a-4e10-9460-79a5755a3e3f">
 
 ```swift
 import SwiftUI
