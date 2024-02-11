@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct FavoriteButton: View {
+    @Binding var isSet: Bool
     var body: some View {
         Text("Hello, Carlos!")
     }
 }
 
 #Preview {
-    FavoriteButton()
+    FavoriteButton(isSet: .constant(true))
 }
