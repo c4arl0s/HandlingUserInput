@@ -7,7 +7,7 @@
 3. [x] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
 4. [x] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
 5. [x] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
-6. [ ] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
+6. [x] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
 
 # [HandlingUserInput](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 
@@ -512,4 +512,8 @@ Next, you’ll add the `FavoriteButton` to the detail view, binding the button�
 # Step 5 
 
 Switch to `LandmarkDetail`, and compute the index of the input landmark by comparing it with the model data.
+
+<img width="1393" alt="Screenshot 2024-02-11 at 5 51 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/f08af54f-ee3f-4ec6-b734-3379d609b37e">
+
+To support this, you also need access to the environment’s model data.
 
