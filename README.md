@@ -450,6 +450,10 @@ Update the `LandmarkDetail` view to work with the `ModelData` object in the envi
 
 Update the `LandmarkRow` preview to work with the `ModelData` object.
 
+<img width="1215" alt="Screenshot 2024-02-11 at 3 15 13 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a23b3dbb-3bed-47fe-a432-5b4efb3a1d9e">
 
+# Step 5
+
+Update the `ContentVitew` preview to add the model object to the environment, which makes the object available to any subview. 
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
