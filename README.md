@@ -392,7 +392,7 @@ Before moving on, return the default value of `showsFavoritesOnly` to `false`.
 
 Use the Live preview and try out this new functionality by tapping the toggle.
 
-<img width="694" alt="Screenshot 2024-02-05 at 6 56 06 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/5c5fb772-da16-4d25-94c8-7ffafa00be25">
+![Screen Recording 2024-02-11 at 1 48 10 p m 2024-02-11 1_50_40 p m](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/f009a560-8075-4213-b742-4964696b91ee)
 
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 
