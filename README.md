@@ -474,3 +474,9 @@ Switch back to `LandmarkList` to verify that everything is working properly.
 ![Screen Recording 2024-02-11 at 3 33 46 p m 2024-02-11 3_35_42 p m](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/962a8a3a-03e2-40f3-8917-0f12684824ab)
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+The Landmarks app can now switch between a filtered and unfiltered view of the landmarks, but the list of favorite landmarks is still hard coded. To allow the user to add and remove favorites, you need to add a favorite button to the landmark detail view.
+
+
+
+
