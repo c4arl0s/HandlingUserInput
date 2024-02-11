@@ -461,4 +461,10 @@ Update the `ContentView` preview to add the model object to the environment, whi
 A preview fails if any subview requires a model object in the environment, but the view you are previewing does not have the `environment(_:)` modifier.
 Next, you will update the app instance to put the model object in the environment when you run the app in the simulator or on a device.
 
+# Step 6
+
+Update the `LandmarksApp` to create a model instance and supply it to `ContentView` using the `environment(_:)` modifier.
+
+
+
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
