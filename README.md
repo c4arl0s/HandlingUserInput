@@ -517,3 +517,8 @@ Switch to `LandmarkDetail`, and compute the index of the input landmark by compa
 
 To support this, you also need access to the environment’s model data.
 
+# Step 6
+
+Inside the body property, add the model data using a `Bindable` wrapper. Embed the landmark´s name in an `HStack` with a new `FavoriteButton`; provide a binding to the `isFavorite` property with the dollar sign (`$`).
+
+
