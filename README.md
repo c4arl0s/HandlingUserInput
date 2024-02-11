@@ -406,8 +406,21 @@ With Observation, a view in `SwiftUI` can support data changes without using pro
 
 In the project's navigation pane, select Model Data.
 
+# Step 2
+
+Declare a new model type using the `Observable()` macro.
+
+<img width="1250" alt="Screenshot 2024-02-11 at 2 11 15 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a0bbf26a-78d5-441b-81d9-a5ad5846cc0b">
+
+`SwiftUI` updates a view only when an observable property changes and the view´s body reads the property directly.
+
+# Step 3
+
+Move the landmarcks array into the model.
 
 
+
+ 
 
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
