@@ -5,7 +5,7 @@
 1. [x] [1. Mark the User’s Favorite Landmarks](https://github.com/c4arl0s/handlinguserinput#1-Mark-the-Users-Favorite-Landmarks)
 2. [x] [2. Filter the List View](https://github.com/c4arl0s/handlinguserinput#2-Filter-the-List-View)
 3. [x] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
-4. [ ] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
+4. [x] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
 5. [ ] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
 6. [ ] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
 
@@ -274,7 +274,7 @@ struct LandmarkList_Previews: PreviewProvider {
 
 # 3. [Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 
-To give the user control over the list’s filter, you need to add a control that can alter the value of showFavoritesOnly. You do this by **passing a binding to a toggle control**.
+To give the user control over the list’s filter, you need to add a control that can alter the value of `showFavoritesOnly`. You do this by **passing a binding to a toggle control**.
 
 **A binding acts as a reference to a mutable state**. When a user taps the toggle from off to on, and off again, the control uses the binding to update the view’s state accordingly.
 
@@ -392,6 +392,33 @@ Before moving on, return the default value of `showsFavoritesOnly` to `false`.
 
 Use the Live preview and try out this new functionality by tapping the toggle.
 
+<img width="694" alt="Screenshot 2024-02-05 at 6 56 06 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/5c5fb772-da16-4d25-94c8-7ffafa00be25">
+
 # 4. [Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+To prepare for the user to control which particular landmarks are favorites, you will first store the landmark data using the `Observable()` macro.
+
+<img width="409" alt="Screenshot 2024-02-11 at 1 56 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/4dd10035-7308-45f9-9dd2-2999b74d6e1a">
+
+With Observation, a view in `SwiftUI` can support data changes without using property wrappers or bindings. `SwiftUI` watches for any observable property changes that could affect a view, and displays the correct version of the view after a change.
+
+# Step 1
+
+In the project's navigation pane, select Model Data.
+
+# Step 2
+
+Declare a new model type using the `Observable()` macro.
+
+<img width="1250" alt="Screenshot 2024-02-11 at 2 11 15 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a0bbf26a-78d5-441b-81d9-a5ad5846cc0b">
+
+`SwiftUI` updates a view only when an observable property changes and the view´s body reads the property directly.
+
+# Step 3
+
+Move the landmarcks array into the model.
+
+<img width="1281" alt="Screenshot 2024-02-11 at 2 17 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/8842d2b0-2c07-4ed7-8ca3-7097aa9f7a64">
+
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
