@@ -430,6 +430,18 @@ Now that you have created the `ModelData` object, you need to update your views 
 
 In `LandmarkList`, add an `@Environment` property wrapper to the view, and an `environment(_:)` modifier to the preview.
 
+<img width="1212" alt="Screenshot 2024-02-11 at 2 55 19 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/77268191-fb11-4ffc-8e98-9ed48bb37d08">
+
+The `modelData` property gets ist value automatically, as long as the `environment(_:)` modifier has been applied to a parent. The `@Environment` property wrapper enables you to read the model data of the current view. Adding an `environment(_:)` modifier passes the data object down through the environment.
+
+# Step 2
+
+Use `modelData.landmarks` as the data when filtering landmarks.
+
+
+
+
+
 
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
