@@ -481,6 +481,8 @@ The Landmarks app can now switch between a filtered and unfiltered view of the l
 
 You will first create a reusable `Favorite` button.
 
+<img width="1077" alt="Screenshot 2024-02-11 at 5 18 45 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/9625ba6a-c797-48df-85bf-8a919a46ced4">
+
 
 
 
