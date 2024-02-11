@@ -444,4 +444,12 @@ Use `modelData.landmarks` as the data when filtering landmarks.
 
 Update the `LandmarkDetail` view to work with the `ModelData` object in the environment.
 
+<img width="1332" alt="Screenshot 2024-02-11 at 3 07 16 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/deb92a17-6079-478e-bae9-61573eda96db">
+
+# Step 4
+
+Update the `LandmarkRow` preview to work with the `ModelData` object.
+
+
+
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
