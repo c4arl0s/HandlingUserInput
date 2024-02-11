@@ -465,6 +465,12 @@ Next, you will update the app instance to put the model object in the environmen
 
 Update the `LandmarksApp` to create a model instance and supply it to `ContentView` using the `environment(_:)` modifier.
 
+<img width="1192" alt="Screenshot 2024-02-11 at 3 27 38 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/e428d709-6ecd-4267-9d33-fba425e18978">
 
+# Step 7 
+
+Switch back to `LandmarkList` to verify that everything is working properly.
+
+![Screen Recording 2024-02-11 at 3 33 46 p m 2024-02-11 3_35_42 p m](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/962a8a3a-03e2-40f3-8917-0f12684824ab)
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
