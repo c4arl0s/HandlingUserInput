@@ -494,3 +494,22 @@ The binding property wrapper enables you to read and write between a property th
 # Step 3
 
 Create a `Button` with an action that toggles the `isSet` state, and that changes its appearence based on the state.
+
+<img width="1417" alt="Screenshot 2024-02-11 at 5 37 37 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/1da9006f-3105-4232-ba2f-2b1fb05b8564">
+
+The `title` string that you provide for the button’s label doesn’t appear in the UI when you use the `iconOnly` label style, but VoiceOver uses it to improve accessibility.
+
+As your program grows, it is a good idea to add hierarchy. Before moving on, create a few more groups.
+
+# Step 4
+
+Collect the general purpose `CircleImage`, `MapView`, and `FavoriteButton` files into a `Helpers` group, and the landmark views into a `Landmarks` group.
+
+<img width="222" alt="Screenshot 2024-02-11 at 5 43 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/73830ce0-8041-497c-9ed5-f12e0ba77e64">
+
+Next, you’ll add the `FavoriteButton` to the detail view, binding the button’s `isSet` property to the `isFavorite` property of a given landmark.
+
+# Step 5 
+
+Switch to `LandmarkDetail`, and compute the index of the input landmark by comparing it with the model data.
+

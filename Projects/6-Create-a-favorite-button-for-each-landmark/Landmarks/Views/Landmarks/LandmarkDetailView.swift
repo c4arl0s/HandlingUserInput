@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct LandmarkDetailView: View {
+    @Environment(ModelData.self) var modelData
     var landmark: Landmark
+    
+    var landmarkIndex: Int {
+        modelData.landmarks.firstIndex(where: {$0.id == landmark.id})!
+    }
     
     var body: some View {
         ScrollView {
@@ -50,6 +55,8 @@ struct LandmarkDetailView: View {
 
 struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailView(landmark: ModelData().landmarks[0])
+        let modelData = ModelData()
+        return LandmarkDetailView(landmark: ModelData().landmarks[0])
+            .environment(modelData)
     }
 }
