@@ -491,4 +491,6 @@ Add an `isSet` binding that indicates the button´s current state, and provide a
 
 The binding property wrapper enables you to read and write between a property that stores data and a view that displays and changes the data. Because you use a binding, changes made inside this view propagate back to the data source.
 
+# Step 3
 
+Create a `Button` with an action that toggles the `isSet` state, and that changes its appearence based on the state.
