@@ -438,10 +438,10 @@ The `modelData` property gets ist value automatically, as long as the `environme
 
 Use `modelData.landmarks` as the data when filtering landmarks.
 
+<img width="1264" alt="Screenshot 2024-02-11 at 3 00 56 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/bd2391e4-825f-4687-b3ee-eb7e54bac9c1">
 
+# Step 3
 
-
-
-
+Update the `LandmarkDetail` view to work with the `ModelData` object in the environment.
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
