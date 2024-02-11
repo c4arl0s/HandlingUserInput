@@ -6,7 +6,7 @@
 2. [x] [2. Filter the List View](https://github.com/c4arl0s/handlinguserinput#2-Filter-the-List-View)
 3. [x] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
 4. [x] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
-5. [ ] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
+5. [x] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
 6. [ ] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
 
 # [HandlingUserInput](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
@@ -421,4 +421,56 @@ Move the landmarcks array into the model.
 <img width="1281" alt="Screenshot 2024-02-11 at 2 17 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/8842d2b0-2c07-4ed7-8ca3-7097aa9f7a64">
 
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+Now that you have created the `ModelData` object, you need to update your views to adopt it as the data store for your app.
+
+<img width="438" alt="Screenshot 2024-02-11 at 2 31 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/b633fb4c-102d-4111-a752-d846a423d220">
+
+# Step 1
+
+In `LandmarkList`, add an `@Environment` property wrapper to the view, and an `environment(_:)` modifier to the preview.
+
+<img width="1212" alt="Screenshot 2024-02-11 at 2 55 19 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/77268191-fb11-4ffc-8e98-9ed48bb37d08">
+
+The `modelData` property gets ist value automatically, as long as the `environment(_:)` modifier has been applied to a parent. The `@Environment` property wrapper enables you to read the model data of the current view. Adding an `environment(_:)` modifier passes the data object down through the environment.
+
+# Step 2
+
+Use `modelData.landmarks` as the data when filtering landmarks.
+
+<img width="1264" alt="Screenshot 2024-02-11 at 3 00 56 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/bd2391e4-825f-4687-b3ee-eb7e54bac9c1">
+
+# Step 3
+
+Update the `LandmarkDetail` view to work with the `ModelData` object in the environment.
+
+<img width="1332" alt="Screenshot 2024-02-11 at 3 07 16 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/deb92a17-6079-478e-bae9-61573eda96db">
+
+# Step 4
+
+Update the `LandmarkRow` preview to work with the `ModelData` object.
+
+<img width="1215" alt="Screenshot 2024-02-11 at 3 15 13 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a23b3dbb-3bed-47fe-a432-5b4efb3a1d9e">
+
+# Step 5
+
+Update the `ContentView` preview to add the model object to the environment, which makes the object available to any subview. 
+
+<img width="1210" alt="Screenshot 2024-02-11 at 3 19 05 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/9cca846f-f1cd-4df8-b856-ea62e95a8552">
+
+A preview fails if any subview requires a model object in the environment, but the view you are previewing does not have the `environment(_:)` modifier.
+Next, you will update the app instance to put the model object in the environment when you run the app in the simulator or on a device.
+
+# Step 6
+
+Update the `LandmarksApp` to create a model instance and supply it to `ContentView` using the `environment(_:)` modifier.
+
+<img width="1192" alt="Screenshot 2024-02-11 at 3 27 38 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/e428d709-6ecd-4267-9d33-fba425e18978">
+
+# Step 7 
+
+Switch back to `LandmarkList` to verify that everything is working properly.
+
+![Screen Recording 2024-02-11 at 3 33 46 p m 2024-02-11 3_35_42 p m](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/962a8a3a-03e2-40f3-8917-0f12684824ab)
+
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
