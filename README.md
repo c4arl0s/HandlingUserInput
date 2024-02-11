@@ -477,6 +477,10 @@ Switch back to `LandmarkList` to verify that everything is working properly.
 
 The Landmarks app can now switch between a filtered and unfiltered view of the landmarks, but the list of favorite landmarks is still hard coded. To allow the user to add and remove favorites, you need to add a favorite button to the landmark detail view.
 
+# Step 1
+
+You will first create a reusable `Favorite` button.
+
 
 
 
