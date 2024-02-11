@@ -6,7 +6,7 @@
 2. [x] [2. Filter the List View](https://github.com/c4arl0s/handlinguserinput#2-Filter-the-List-View)
 3. [x] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
 4. [x] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
-5. [ ] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
+5. [x] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
 6. [ ] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
 
 # [HandlingUserInput](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
@@ -421,4 +421,15 @@ Move the landmarcks array into the model.
 <img width="1281" alt="Screenshot 2024-02-11 at 2 17 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/8842d2b0-2c07-4ed7-8ca3-7097aa9f7a64">
 
 # 5. [Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+Now that you have created the `ModelData` object, you need to update your views to adopt it as the data store for your app.
+
+<img width="438" alt="Screenshot 2024-02-11 at 2 31 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/b633fb4c-102d-4111-a752-d846a423d220">
+
+# Step 1
+
+In `LandmarkList`, add an `@Environment` property wrapper to the view, and an `environment(_:)` modifier to the preview.
+
+
+
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
