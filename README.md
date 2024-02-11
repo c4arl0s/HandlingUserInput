@@ -487,7 +487,7 @@ You will first create a reusable `Favorite` button.
 
 Add an `isSet` binding that indicates the button´s current state, and provide a constant value for the preview.
 
-
+<img width="1148" alt="Screenshot 2024-02-11 at 5 28 51 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/3ea5a0ae-0bc9-4e43-82ff-c1f6d5cee826">
 
 The binding property wrapper enables you to read and write between a property that stores data and a view that displays and changes the data. Because you use a binding, changes made inside this view propagate back to the data source.
 
