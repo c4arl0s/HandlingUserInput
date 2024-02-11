@@ -454,6 +454,11 @@ Update the `LandmarkRow` preview to work with the `ModelData` object.
 
 # Step 5
 
-Update the `ContentVitew` preview to add the model object to the environment, which makes the object available to any subview. 
+Update the `ContentView` preview to add the model object to the environment, which makes the object available to any subview. 
+
+<img width="1210" alt="Screenshot 2024-02-11 at 3 19 05 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/9cca846f-f1cd-4df8-b856-ea62e95a8552">
+
+A preview fails if any subview requires a model object in the environment, but the view you are previewing does not have the `environment(_:)` modifier.
+Next, you will update the app instance to put the model object in the environment when you run the app in the simulator or on a device.
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
