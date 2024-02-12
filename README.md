@@ -521,4 +521,14 @@ To support this, you also need access to the environment’s model data.
 
 Inside the body property, add the model data using a `Bindable` wrapper. Embed the landmark´s name in an `HStack` with a new `FavoriteButton`; provide a binding to the `isFavorite` property with the dollar sign (`$`).
 
+<img width="1311" alt="Screenshot 2024-02-11 at 6 00 31 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a89c4137-b132-444f-8999-c72bc8b41ece">
 
+Use landmarkIndex with the modelData object to ensure that the button updates the isFavorite property of the landmark stored in your model object.
+
+# Step 7
+
+Switch back to `LandmarkList`, and make sure the Live preview is on.
+
+![step7](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/7ea4e1b2-6782-44bb-91d3-8faf5f6d4686)
+
+As you navigate from the list to the detail and tap the button, those changes persist when you return to the list. Because both views access the same model object in the environment, the two views maintain consistency.
