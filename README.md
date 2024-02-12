@@ -7,7 +7,7 @@
 3. [x] [3. Add a Control to Toggle the State](https://github.com/c4arl0s/handlinguserinput#3-Add-a-Control-to-Toggle-the-State)
 4. [x] [4. Use an Observable Object for Storage](https://github.com/c4arl0s/handlinguserinput#4-Use-an-Observable-Object-for-Storage)
 5. [x] [5. Adopt the Model Object in Your Views](https://github.com/c4arl0s/handlinguserinput#5-Adopt-the-Model-Object-in-Your-Views)
-6. [ ] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
+6. [x] [6. Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#6-Create-a-Favorite-Button-for-Each-Landmark)
 
 # [HandlingUserInput](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
 
@@ -474,3 +474,61 @@ Switch back to `LandmarkList` to verify that everything is working properly.
 ![Screen Recording 2024-02-11 at 3 33 46 p m 2024-02-11 3_35_42 p m](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/962a8a3a-03e2-40f3-8917-0f12684824ab)
 
 # 6. [Create a Favorite Button for Each Landmark](https://github.com/c4arl0s/handlinguserinput#handlinguserinput---content)
+
+The Landmarks app can now switch between a filtered and unfiltered view of the landmarks, but the list of favorite landmarks is still hard coded. To allow the user to add and remove favorites, you need to add a favorite button to the landmark detail view.
+
+# Step 1
+
+You will first create a reusable `Favorite` button.
+
+<img width="1077" alt="Screenshot 2024-02-11 at 5 18 45 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/9625ba6a-c797-48df-85bf-8a919a46ced4">
+
+# Step 2
+
+Add an `isSet` binding that indicates the button´s current state, and provide a constant value for the preview.
+
+<img width="1148" alt="Screenshot 2024-02-11 at 5 28 51 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/3ea5a0ae-0bc9-4e43-82ff-c1f6d5cee826">
+
+The binding property wrapper enables you to read and write between a property that stores data and a view that displays and changes the data. Because you use a binding, changes made inside this view propagate back to the data source.
+
+# Step 3
+
+Create a `Button` with an action that toggles the `isSet` state, and that changes its appearence based on the state.
+
+<img width="1417" alt="Screenshot 2024-02-11 at 5 37 37 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/1da9006f-3105-4232-ba2f-2b1fb05b8564">
+
+The `title` string that you provide for the button’s label doesn’t appear in the UI when you use the `iconOnly` label style, but VoiceOver uses it to improve accessibility.
+
+As your program grows, it is a good idea to add hierarchy. Before moving on, create a few more groups.
+
+# Step 4
+
+Collect the general purpose `CircleImage`, `MapView`, and `FavoriteButton` files into a `Helpers` group, and the landmark views into a `Landmarks` group.
+
+<img width="222" alt="Screenshot 2024-02-11 at 5 43 26 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/73830ce0-8041-497c-9ed5-f12e0ba77e64">
+
+Next, you’ll add the `FavoriteButton` to the detail view, binding the button’s `isSet` property to the `isFavorite` property of a given landmark.
+
+# Step 5 
+
+Switch to `LandmarkDetail`, and compute the index of the input landmark by comparing it with the model data.
+
+<img width="1393" alt="Screenshot 2024-02-11 at 5 51 00 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/f08af54f-ee3f-4ec6-b734-3379d609b37e">
+
+To support this, you also need access to the environment’s model data.
+
+# Step 6
+
+Inside the body property, add the model data using a `Bindable` wrapper. Embed the landmark´s name in an `HStack` with a new `FavoriteButton`; provide a binding to the `isFavorite` property with the dollar sign (`$`).
+
+<img width="1311" alt="Screenshot 2024-02-11 at 6 00 31 p m" src="https://github.com/c4arl0s/HandlingUserInput/assets/24994818/a89c4137-b132-444f-8999-c72bc8b41ece">
+
+Use landmarkIndex with the modelData object to ensure that the button updates the isFavorite property of the landmark stored in your model object.
+
+# Step 7
+
+Switch back to `LandmarkList`, and make sure the Live preview is on.
+
+![step7](https://github.com/c4arl0s/HandlingUserInput/assets/24994818/7ea4e1b2-6782-44bb-91d3-8faf5f6d4686)
+
+As you navigate from the list to the detail and tap the button, those changes persist when you return to the list. Because both views access the same model object in the environment, the two views maintain consistency.
